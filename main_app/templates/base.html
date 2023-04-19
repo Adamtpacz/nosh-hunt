@@ -17,11 +17,15 @@
                 <li><a href="/">&nbsp;&nbsp;Nosh Hunt&nbsp;&nbsp;</a></li>
             </ul>
             <ul class="right">
-                <li><a>All Lists</a></li>
-                <li><a>Your Lists</a></li>
-                <li><a>Create List</a></li>
-                <li><a>Log Out</a></li>
-                <li><a>Sign Up</a></li>
+                {% if user.is_authenticated %}
+                    <li><a>All Lists</a></li>
+                    <li><a>Your Lists</a></li>
+                    <li><a>Create List</a></li>
+                    <li><a href="{% url 'logout' %}">Log Out</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Log In</a></li>
+                    <li><a>Sign Up</a></li>
+                {% endif %}
             </ul>
         </nav>
     </header>
