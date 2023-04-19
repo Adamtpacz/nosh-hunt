@@ -20,7 +20,7 @@ CITIES = (
     ('LAX', 'Los Angeles')
 )
 
-EXPERIENCES = (
+CATEGORIES = (
     ('F', 'Fine Dining'),
     ('C', 'Casual'),
     ('S', 'Street Food')
@@ -47,7 +47,7 @@ class Restaurant(models.Model):
 class List(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
-    category = models.CharField(max_length=1, choices=EXPERIENCES)
+    category = models.CharField(max_length=1, choices=CATEGORIES)
     city = models.CharField(max_length=3, choices=CITIES)
     likes = models.IntegerField()
     restaurants = models.ManyToManyField(Restaurant)
