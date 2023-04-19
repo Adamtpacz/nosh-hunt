@@ -21,6 +21,7 @@ CITIES = (
 
 # Create your models here.
 class List(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
     category = models.CharField(max_length=1, choices=CATEGORIES)
     city = models.CharField(max_length=3, choices=CITIES)
