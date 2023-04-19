@@ -8,10 +8,6 @@ main {
     flex: 1 0 auto;
 }
 
-ul {
-    list-style-type: none;
-}
-
 footer.page-footer {
     padding-top: 0;
     text-align: right;
