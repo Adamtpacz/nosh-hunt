@@ -41,6 +41,9 @@ class Restaurant(models.Model):
     price = models.CharField(max_length=3, choices=PRICES)
     visited = models.BooleanField()
 
+    def __str__(self):
+        return self.name
+
 class List(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
@@ -51,3 +54,11 @@ class List(models.Model):
 
     def __str__(self):
         return self.title
+    
+class Comment(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    content = models.TextField(max_length=5000)
+    list = models.ForeignKey(List, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.user} posted {self.content}"
