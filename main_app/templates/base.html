@@ -19,7 +19,7 @@
             <ul class="right">
                 {% if user.is_authenticated %}
                     <li><a>All Lists</a></li>
-                    <li><a>Your Lists</a></li>
+                    <li><a href="{% url 'index' %}">Your Lists</a></li>
                     <li><a>Create List</a></li>
                     <li><a href="{% url 'logout' %}">Log Out</a></li>
                 {% else %}

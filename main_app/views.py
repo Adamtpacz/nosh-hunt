@@ -1,12 +1,18 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from .models import List, Restaurant, Comment
 from .forms import SignupForm
 
 # Create your views here.
 
 def home(request):
     return render(request, 'home.html')
+
+def lists_index(request):
+    # Dont forget to add this in to see specific lists for logged in users
+    lists = List.objects.all()
+    return render(request, 'lists/index.html', {'lists': lists})
 
 def signup(request):
     error_message = ''
