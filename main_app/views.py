@@ -40,7 +40,7 @@ def signup(request):
 
 class ListCreate(CreateView):
     model = List
-    fields = ['title', 'category', 'city']
+    fields = ['title', 'category', 'city', 'restaurants']
 
     def form_valid(self, form):
         form.instance.user = self.request.user
