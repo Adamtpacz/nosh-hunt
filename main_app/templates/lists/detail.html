@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>{{ list.title }}</h1>
+
+<div class="card">
+  <div class="card-content">
+    <p><strong>Category:</strong> {{ list.get_category_display }}</p>
+    <p><strong>City:</strong> {{ list.get_city_display }}</p>
+    <p><strong>Likes:</strong> {{ list.likes }}</p>
+    <p><strong>Restaurants:</strong></p>
+    <div class="col s6">
+        {% for restaurant in list.restaurants.all %}
+        <div class="card">
+            <div class="card-content">
+                <p>{{ restaurant.name }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

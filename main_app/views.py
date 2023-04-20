@@ -15,6 +15,10 @@ def lists_index(request):
     lists = List.objects.all()
     return render(request, 'lists/index.html', {'lists': lists})
 
+def lists_detail(request, list_id):
+    list = List.objects.get(id=list_id)
+    return render(request, 'lists/detail.html', {'list': list})
+
 def signup(request):
     error_message = ''
     if request.method == 'POST':
