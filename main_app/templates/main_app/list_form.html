@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="center-align">Create a List</h1>
+<!-- Leaving the action empty makes the form post to the same url used to display it -->
+<div class="row">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <!-- <div class="row">
+            <div class="input-field col s12">
+                <input id="title" type="text" class="validate">
+                <label for="title">Title</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <select id="category" name="category">
+                    <option value="" disabled selected>Choose a Category</option>
+                    <option value="F">Fine Dining</option>
+                    <option value="C">Casual</option>
+                    <option value="S">Street Food</option>
+                </select>
+                <label for="category">Category</label>
+            </div>
+            <div class="input-field col s6">
+                <select id="city">
+                    <option value="" disabled selected>Choose a City</option>
+                    <option value="NYC">New York City</option>
+                    <option value="PAR">Paris</option>
+                    <option value="ROM">Rome</option>
+                    <option value="TKY">Tokyo</option>
+                    <option value="LAX">Los Angeles</option>
+                </select>
+                <label for="city">City</label>
+            </div>
+        </div> -->
+        <table>
+        {{ form.as_p }}
+        </table>
+        <input type="submit" value="Create" class="btn">
+    </form>
+</div>
+
+<script>
+    const selectEls = document.querySelectorAll('select');
+    M.FormSelect.init(selectEls);
+</script>
+{% endblock %}

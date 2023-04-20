@@ -4,13 +4,14 @@
 <h1 class="center-align">Your Lists</h1>
 
 {% for list in lists %}
-<div class="card cyan lighten-3">
+<div class="card blue accent-1">
     <div class="card-content">
         <span class="card-title">{{ list.title }}</span>
         <p>Category: {{ list.get_category_display }}</p>
         <p>City: {{ list.get_city_display }}</p>
         <p>Likes: {{ list.likes }}</p>
         <!-- <div class="row">
+            <!-- <p>Restaurants:</p>
             <div class="col s6">
                 {% for restaurant in list.restaurants.all %}
                 <div class="card">

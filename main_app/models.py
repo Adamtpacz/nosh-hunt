@@ -49,11 +49,14 @@ class List(models.Model):
     title = models.CharField(max_length=50)
     category = models.CharField(max_length=1, choices=CATEGORIES)
     city = models.CharField(max_length=3, choices=CITIES)
-    likes = models.IntegerField()
+    likes = models.IntegerField(default=1)
     restaurants = models.ManyToManyField(Restaurant)
 
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+        return reverse('index')
     
 class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
