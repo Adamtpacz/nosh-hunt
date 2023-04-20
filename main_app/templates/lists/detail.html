@@ -19,6 +19,13 @@
         {% endfor %}
     </div>
   </div>
+
+  <div class="card-action">
+    <a href="{% url 'lists_update' list.id %}">Edit</a>
+    <a href="{% url 'lists_delete' list.id %}">Delete</a>
+  </div>
 </div>
+
+
 
 {% endblock %}

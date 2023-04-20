@@ -45,3 +45,11 @@ class ListCreate(CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
+    
+class ListUpdate(UpdateView):
+    model = List
+    fields = ['title', 'category', 'city', 'restaurants']
+
+class ListDelete(DeleteView):
+    model = List
+    success_url = '/lists'
