@@ -5,6 +5,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import List, Restaurant, Comment
 from .forms import SignupForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 
@@ -41,7 +42,7 @@ def signup(request):
     context = {'form': form, 'error_message': error_message}
     return render(request, 'registration/signup.html', context)
 
-class ListCreate(CreateView):
+class ListCreate(LoginRequiredMixin, CreateView):
     model = List
     fields = ['title', 'category', 'city', 'restaurants']
 
@@ -49,10 +50,10 @@ class ListCreate(CreateView):
         form.instance.user = self.request.user
         return super().form_valid(form)
     
-class ListUpdate(UpdateView):
+class ListUpdate(LoginRequiredMixin, UpdateView):
     model = List
     fields = ['title', 'category', 'city', 'restaurants']
 
-class ListDelete(DeleteView):
+class ListDelete(LoginRequiredMixin, DeleteView):
     model = List
     success_url = '/lists'
