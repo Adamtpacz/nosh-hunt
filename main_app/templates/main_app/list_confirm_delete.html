@@ -3,11 +3,11 @@
 {% block content %}
 <h1 class="center-align">Delete List</h1>
 
-<h4 class="center-align">Are you sure you want to delete <span class="purple-text">{{ object.title }}</span>?</h4>
+<h4 class="center-align">Are you sure you want to delete <span class="black-text">{{ object.title }}</span>?</h4>
 <form action="" method="POST">
     {% csrf_token %}
     <div class="center-align">
-        <input type="submit" value="Delete" class="btn">
+        <input type="submit" value="Delete" class="blue accent-1 btn">
         <a href="{% url 'detail' list.id %}" class="btn red lighten-1">Cancel</a>
     </div>
 </form>

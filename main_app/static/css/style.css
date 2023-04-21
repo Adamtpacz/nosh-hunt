@@ -2,6 +2,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    color: white;
 }
 
 main {
@@ -9,11 +10,19 @@ main {
 }
 
 .helptext {
-    color: white;
+    color: white !important;
 }
 
-form #signup > ul > li {
-    color: white;
+label {
+    color: white !important;
+}
+
+input {
+    color: white !important;
+}
+
+.dropdown-content {
+    background-color: lightgrey !important;
 }
 
 footer.page-footer {

@@ -4,7 +4,7 @@
 <h1 class="center-align">{{ list.title }}</h1>
 
 <div class="card">
-    <div class="card-content">
+    <div class="black-text card-content">
         <p><strong>Category:</strong> {{ list.get_category_display }}</p>
         <p><strong>City:</strong> {{ list.get_city_display }}</p>
         <p><strong>Likes:</strong> {{ list.likes }}</p>
@@ -20,13 +20,13 @@
                         <p>
                             {% if restaurant.visited == True %}
                             <label>
-                                <input type="checkbox" disabled="disabled" checked="checked"/>
-                                <span>Visited</span>
+                                <input type="checkbox" disabled="disabled" checked="checked" />
+                                <span class="black-text">Visited</span>
                             </label>
                             {% else %}
                             <label>
-                                <input type="checkbox" disabled="disabled"/>
-                                <span>Not Visited</span>
+                                <input type="checkbox" disabled="disabled" />
+                                <span class="black-text">Not Visited</span>
                             </label>
                             {% endif %}
                         </p>
@@ -42,7 +42,5 @@
         <a href="{% url 'lists_delete' list.id %}">Delete</a>
     </div>
 </div>
-
-
 
 {% endblock %}
