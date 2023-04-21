@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if object %}
+    <h1>Edit <span class="teal-text">{{object.name}}</span></h1>
+{% else %}
+    <h1 class="center-align">Create a List</h1>
+{% endif %}
+
+<!-- Leaving the action empty makes the form post to the same url used to display it -->
+<div class="row">
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_div }}
+        
+        {% if object %}
+        <div class="center-align">
+            <input type="submit" value="Update" class="btn">
+            <a href="{% url 'detail' list.id %}" class="btn red lighten-1">Cancel</a>
+        </div>
+        {% else %}
+        <div class="center-align">
+            <input type="submit" value="Create" class="btn">
+        </div>
+        {% endif %}
+    </form>
+</div>
+
+<script>
+    const selectEls = document.querySelectorAll('select');
+    M.FormSelect.init(selectEls);
+</script>
+{% endblock %}

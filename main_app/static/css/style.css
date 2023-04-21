@@ -8,8 +8,8 @@ main {
     flex: 1 0 auto;
 }
 
-ul {
-    list-style-type: none;
+.helptext {
+    color: white;
 }
 
 footer.page-footer {
