@@ -4,17 +4,20 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import List, Restaurant, Comment
 from .forms import SignupForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
 def home(request):
     return render(request, 'home.html')
 
+@login_required
 def lists_index(request):
     # Dont forget to add this in to see specific lists for logged in users
     lists = List.objects.filter(user=request.user)
     return render(request, 'lists/index.html', {'lists': lists})
 
+@login_required
 def lists_detail(request, list_id):
     list = List.objects.get(id=list_id)
     return render(request, 'lists/detail.html', {'list': list})
