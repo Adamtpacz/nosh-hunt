@@ -8,13 +8,14 @@
     <title>Nosh Hunt</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
-<body class="blue lighten-4">
+<body class="blue darken-1">
     <header class="navbar-fixed">
-        <nav class="blue">
+        <nav class="blue darken-1 z-depth-0">
             <ul>
-                <li><a href="/" class="brand-logo left">&nbsp;&nbsp;Nosh Hunt&nbsp;&nbsp;</a></li>
+                <a href="/" class="brand-logo left"><i class="material-icons" style="font-size: 45px;">&nbsp;&nbsp;restaurant_menu</i>Nosh Hunt&nbsp;&nbsp;</a>
             </ul>
             <ul class="right">
                 {% if user.is_authenticated %}
@@ -24,7 +25,7 @@
                     <li><a href="{% url 'logout' %}">Log Out</a></li>
                 {% else %}
                     <li><a href="{% url 'login' %}">Log In</a></li>
-                    <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                    <li><a href="{% url 'signup' %}" class="btn-small waves-effect black-text blue accent-1">Sign Up</a></li>
                 {% endif %}
             </ul>
         </nav>

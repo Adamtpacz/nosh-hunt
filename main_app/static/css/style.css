@@ -8,8 +8,8 @@ main {
     flex: 1 0 auto;
 }
 
-a {
-    font-size: 20px;
+.helptext {
+    color: white;
 }
 
 footer.page-footer {
