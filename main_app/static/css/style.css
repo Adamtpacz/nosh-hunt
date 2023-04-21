@@ -12,6 +12,10 @@ main {
     color: white;
 }
 
+form #signup > ul > li {
+    color: white;
+}
+
 footer.page-footer {
     padding-top: 0;
     text-align: right;
