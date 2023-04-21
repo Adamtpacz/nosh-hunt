@@ -10,14 +10,29 @@
         <p><strong>Likes:</strong> {{ list.likes }}</p>
         <p><strong>Restaurants:</strong></p>
         <div class="row">
-            <div class="col s3">
-            {% for restaurant in list.restaurants.all %}
-            <div class="card">
-                <div class="card-content">
-                    <p>{{ restaurant.name }}</p>
+            <div class="col s6">
+                {% for restaurant in list.restaurants.all %}
+                <div class="card">
+                    <div class="card-content">
+                        <p><strong>{{ restaurant.name }}</strong></p>
+                        <p>{{ restaurant.address }}</p>
+                        <p>{{ restaurant.get_food_type_display }} - {{ restaurant.get_price_display }}</p>
+                        <p>
+                            {% if restaurant.visited == True %}
+                            <label>
+                                <input type="checkbox" disabled="disabled" checked="checked"/>
+                                <span>Visited</span>
+                            </label>
+                            {% else %}
+                            <label>
+                                <input type="checkbox" disabled="disabled"/>
+                                <span>Not Visited</span>
+                            </label>
+                            {% endif %}
+                        </p>
+                    </div>
                 </div>
-            </div>
-            {% endfor %}
+                {% endfor %}
             </div>
         </div>
     </div>
