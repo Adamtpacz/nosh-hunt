@@ -12,7 +12,7 @@ def home(request):
 
 def lists_index(request):
     # Dont forget to add this in to see specific lists for logged in users
-    lists = List.objects.all()
+    lists = List.objects.filter(user=request.user)
     return render(request, 'lists/index.html', {'lists': lists})
 
 def lists_detail(request, list_id):
