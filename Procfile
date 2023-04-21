@@ -1,0 +1,1 @@
+web: gunicorn nosh_hunt.wsgi
