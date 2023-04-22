@@ -1,12 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&family=Playfair+Display:wght@400;500&display=swap');
+
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
     color: white;
+    font-family: 'Playfair Display', serif;
 }
 
 main {
     flex: 1 0 auto;
+}
+
+h1 {
+    font-family: 'Playfair Display SC', serif;
+    font-weight: 700;
+}
+
+a {
+    font-weight: 500;
 }
 
 .helptext {
@@ -19,6 +31,7 @@ label {
 
 input {
     color: white !important;
+    font-family: 'Playfair Display', serif;
 }
 
 .dropdown-content {
