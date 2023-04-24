@@ -17,15 +17,6 @@
                         <p><strong>{{ restaurant.name }}</strong></p>
                         <p>{{ restaurant.address }}</p>
                         <p>{{ restaurant.get_food_type_display }} - {{ restaurant.get_price_display }}</p>
-                        <p>
-                            {% if restaurant.visited == True %}
-                                <input type="checkbox" disabled="disabled" checked="checked" />
-                                <span class="black-text">Visited</span>
-                            {% else %}
-                                <input type="checkbox" disabled="disabled" />
-                                <span class="black-text">Not Visited</span>
-                            {% endif %}
-                        </p>
                     </div>
                 </div>
                 {% endfor %}
